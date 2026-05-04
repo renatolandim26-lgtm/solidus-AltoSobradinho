@@ -1,5 +1,5 @@
 import { Instagram, Facebook, MapPin, Phone } from "lucide-react";
-import logoSolidusNew from "@assets/logo-solidus-new.png";
+import logoSolidusNew from "@/assets/logo-solidus.png";
 import { condominiumData } from "@/lib/data";
 
 export default function Footer() {
