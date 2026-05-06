@@ -77,7 +77,7 @@ export default function Hero() {
         </div>
       )}
 
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: "var(--font-display)" }}>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6" style={{ fontFamily: "var(--font-display)" }}>
           {currentSlideData.title}
         </h1>
 
