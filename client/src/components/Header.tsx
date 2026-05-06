@@ -6,9 +6,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[#FDFCF9] border-b border-border shadow-soft">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo and Branding */}
-          <div className="flex-[0.5] md:flex-1 flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center">
             <img 
               src="/images/logo-solidus-transparent.png" 
               alt="Solidus Equipe Imobiliária" 
@@ -16,12 +16,12 @@ export default function Header() {
             />
           </div>
 
-          {/* Branding Title - Centered on mobile */}
-          <div className="flex-[2] md:flex-1 flex justify-center">
+          {/* Branding Title - Centered and Large on mobile */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[220px] sm:max-w-none sm:relative sm:left-0 sm:top-0 sm:translate-x-0 sm:translate-y-0 sm:flex-1 flex justify-center">
             <img 
               src="/images/title-solidus-riva.png" 
               alt="Solidus Riva" 
-              className="h-10 sm:h-12 md:h-14 w-full max-w-[180px] sm:max-w-none object-contain hover:opacity-80 transition-opacity"
+              className="h-16 sm:h-12 md:h-14 w-auto object-contain hover:opacity-80 transition-opacity"
             />
           </div>
 
@@ -50,15 +50,13 @@ export default function Header() {
             </a>
           </nav>
 
-
-
           {/* Mobile Menu Button */}
-          <div className="flex-[0.5] md:flex-1 flex justify-end md:hidden">
+          <div className="flex items-center md:hidden">
             <button
               className="p-2 active:scale-90 transition-transform"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
