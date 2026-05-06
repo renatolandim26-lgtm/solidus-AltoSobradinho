@@ -40,7 +40,7 @@ export default function InterestMap() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>
             Localização
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 md:block hidden">
             Conheça as principais atrações e serviços próximos ao condomínio
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function InterestMap() {
               </h3>
               <ul className="space-y-2">
                 {items.map((item, itemIdx) => (
-                  <li key={itemIdx} className="flex items-start gap-3 text-foreground">
+                  <li key={itemIdx} className={`flex items-start gap-3 text-foreground ${itemIdx >= 3 ? 'md:flex hidden' : 'flex'}`}>
                     <span
                       className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white text-xs font-semibold flex-shrink-0"
                       style={{ backgroundColor: categoryColors[item.category] }}

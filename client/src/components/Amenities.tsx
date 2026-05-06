@@ -42,7 +42,7 @@ export default function Amenities() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>
             Área de Lazer e Comodidade
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 md:block hidden">
             Desfrute de uma vida com qualidade, segurança e conforto em um ambiente pensado para você e sua família
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Amenities() {
               <h3 className="text-xl sm:text-2xl font-bold mb-3 text-foreground">
                 {amenity.title}
               </h3>
-              <p className="text-muted-foreground text-sm sm:text-base whitespace-pre-line">
+              <p className="text-muted-foreground text-sm sm:text-base whitespace-pre-line md:block hidden">
                 {amenity.description}
               </p>
             </div>

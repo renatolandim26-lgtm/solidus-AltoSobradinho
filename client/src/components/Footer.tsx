@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Sobre Nós */}
-          <div>
+          <div className="md:block hidden">
             <h4 className="font-bold mb-4">Solidus Empreendimentos</h4>
             <p className="text-sm text-sidebar-foreground/80 leading-relaxed">
               Especialistas em imóveis com conforto, localização privilegiada e alto potencial de valorização.

@@ -26,11 +26,14 @@ export default function Introduction() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
             {/* Left Column - Text */}
             <div className="space-y-8">
-              <p className="text-xl md:text-2xl leading-relaxed text-foreground/90">
+              <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 md:block hidden">
                 Uma nova oportunidade de viver com <span className="font-semibold text-primary">conforto, segurança e qualidade de vida</span>. Em uma localização incrível, com infraestrutura completa, o complexo Alto Sobradinho oferece uma ampla variedade de lazer, serviços e a facilidade de financiamento bancário com documentação completa.
               </p>
-              <p className="text-xl md:text-2xl leading-relaxed text-foreground/90">
+              <p className="text-xl md:text-2xl leading-relaxed text-foreground/90 md:block hidden">
                 Aqui você irá desfrutar de tudo o que está disponível desde a educação até as comodidades e serviços oferecidos, criando um ambiente perfeito para sua família.
+              </p>
+              <p className="text-lg leading-relaxed text-foreground/90 md:hidden block">
+                Viva com <span className="font-semibold text-primary">conforto e segurança</span> no Alto Sobradinho. Um complexo completo com lazer, serviços e facilidade de financiamento para sua família.
               </p>
             </div>
 
@@ -38,15 +41,15 @@ export default function Introduction() {
             <div className="space-y-6">
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/10 shadow-sm">
                 <h3 className="text-xl font-bold text-primary mb-3">Localização Privilegiada</h3>
-                <p className="text-base text-foreground/80">Acesso fácil a todas as principais áreas de Brasília, com infraestrutura completa e segurança 24h.</p>
+                <p className="text-base text-foreground/80 md:block hidden">Acesso fácil a todas as principais áreas de Brasília, com infraestrutura completa e segurança 24h.</p>
               </div>
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/10 shadow-sm">
                 <h3 className="text-xl font-bold text-primary mb-3">Lazer e Comodidade</h3>
-                <p className="text-base text-foreground/80">Piscina, academia, quadra poliesportiva, salão de festas e muito mais para sua diversão.</p>
+                <p className="text-base text-foreground/80 md:block hidden">Piscina, academia, quadra poliesportiva, salão de festas e muito mais para sua diversão.</p>
               </div>
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/10 shadow-sm">
                 <h3 className="text-xl font-bold text-primary mb-3">Cultura e Gastronomia</h3>
-                <p className="text-base text-foreground/80">Aproveite a atmosfera singular de Brasília, com suas opções de cultura, gastronomia e lazer.</p>
+                <p className="text-base text-foreground/80 md:block hidden">Aproveite a atmosfera singular de Brasília, com suas opções de cultura, gastronomia e lazer.</p>
               </div>
             </div>
           </div>

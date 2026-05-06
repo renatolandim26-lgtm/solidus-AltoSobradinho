@@ -9,16 +9,16 @@ export default function OtherDevelopments() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>
             Outros Empreendimentos
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 md:block hidden">
             Conheça outros projetos e empreendimentos
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
-          {condominiumData.otherDevelopments.map((dev) => (
+          {condominiumData.otherDevelopments.map((dev, index) => (
             <div
               key={dev.id}
-              className="card-corporate overflow-hidden hover:shadow-xl rounded-2xl shadow-md transition-all duration-300 group p-6"
+              className={`card-corporate overflow-hidden hover:shadow-xl rounded-2xl shadow-md transition-all duration-300 group p-6 ${index >= 4 ? 'md:block hidden' : 'block'}`}
             >
               {/* Development Image Placeholder */}
               <div className="h-40 sm:h-48 bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center mb-6 group-hover:from-primary/20 group-hover:to-secondary/30 transition-colors overflow-hidden rounded-xl">                {dev.image ? (
