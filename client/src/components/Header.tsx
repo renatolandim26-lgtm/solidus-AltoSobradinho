@@ -8,12 +8,18 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Canto esquerdo */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-3 sm:gap-4">
             <img 
               src="/images/logo-solidus-transparent.png" 
               alt="Solidus Equipe Imobiliária" 
               className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 object-contain hover:opacity-80 transition-opacity drop-shadow-md"
             />
+            {/* Branding Text */}
+            <div className="flex items-center gap-2 text-primary font-bold">
+              <span className="text-sm sm:text-base md:text-lg tracking-wider">SOLIDUS</span>
+              <span className="text-primary/40 font-light">|</span>
+              <span className="text-sm sm:text-base md:text-lg text-[#1e293b] tracking-wider">RIVA</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
