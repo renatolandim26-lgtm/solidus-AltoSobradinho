@@ -96,7 +96,7 @@ export default function Footer() {
             <img 
               src={logoSolidusNew} 
               alt="Solidus" 
-              className="h-10 w-10 object-contain opacity-60 hover:opacity-80 transition-opacity"
+              className="h-12 w-12 sm:h-14 sm:w-14 object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
         </div>

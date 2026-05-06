@@ -8,11 +8,11 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Canto esquerdo */}
-          <div className="hidden lg:flex items-center">
+          <div className="flex items-center">
             <img 
-              src="/images/logo-solidus-final.png" 
+              src="/images/logo-solidus-transparent.png" 
               alt="Solidus Equipe Imobiliária" 
-              className="h-14 w-14 object-contain hover:opacity-80 transition-opacity drop-shadow-md"
+              className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 object-contain hover:opacity-80 transition-opacity drop-shadow-md"
             />
           </div>
 
