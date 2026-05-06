@@ -21,7 +21,7 @@ export default function Header() {
             <img 
               src="/images/title-solidus-riva.png" 
               alt="Solidus Riva" 
-              className="h-14 sm:h-12 md:h-14 object-contain hover:opacity-80 transition-opacity"
+              className="h-20 sm:h-12 md:h-14 object-contain hover:opacity-80 transition-opacity"
             />
           </div>
 
