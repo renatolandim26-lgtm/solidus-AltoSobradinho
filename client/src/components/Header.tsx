@@ -7,23 +7,26 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-[#FDFCF9] border-b border-border shadow-soft">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Canto esquerdo */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          {/* Logo and Branding */}
+          <div className="flex-1 flex items-center gap-2 sm:gap-4">
             <img 
               src="/images/logo-solidus-transparent.png" 
               alt="Solidus Equipe Imobiliária" 
               className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 object-contain hover:opacity-80 transition-opacity drop-shadow-md"
             />
-            {/* Branding Text */}
-            <div className="flex items-center gap-2 text-primary font-bold">
-              <span className="text-sm sm:text-base md:text-lg tracking-wider">SOLIDUS</span>
-              <span className="text-primary/40 font-light">|</span>
-              <span className="text-sm sm:text-base md:text-lg text-[#1e293b] tracking-wider">RIVA</span>
-            </div>
+          </div>
+
+          {/* Branding Title - Centered on mobile */}
+          <div className="flex-1 flex justify-center">
+            <img 
+              src="/images/title-solidus-riva.png" 
+              alt="Solidus Riva" 
+              className="h-10 sm:h-12 md:h-14 object-contain hover:opacity-80 transition-opacity"
+            />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
+          <nav className="hidden md:flex items-center gap-8 flex-[2] justify-center">
             <a href="#sobre" className="text-foreground hover:text-primary transition-smooth">
               Sobre
             </a>
@@ -50,12 +53,14 @@ export default function Header() {
 
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-3 active:scale-90 transition-transform"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="flex-1 flex justify-end md:hidden">
+            <button
+              className="p-3 active:scale-90 transition-transform"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
