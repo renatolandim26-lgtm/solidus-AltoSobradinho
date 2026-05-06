@@ -47,10 +47,7 @@ export default function Introduction() {
                 <h3 className="text-xl font-bold text-primary mb-3">Lazer e Comodidade</h3>
                 <p className="text-base text-foreground/80 md:block hidden">Piscina, academia, quadra poliesportiva, salão de festas e muito mais para sua diversão.</p>
               </div>
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 border border-primary/10 shadow-sm">
-                <h3 className="text-xl font-bold text-primary mb-3">Cultura e Gastronomia</h3>
-                <p className="text-base text-foreground/80 md:block hidden">Aproveite a atmosfera singular de Brasília, com suas opções de cultura, gastronomia e lazer.</p>
-              </div>
+
             </div>
           </div>
 
