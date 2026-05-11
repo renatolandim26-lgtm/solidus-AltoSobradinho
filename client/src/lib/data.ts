@@ -193,6 +193,24 @@ export const condominiumData = {
     }
   ],
   contact: {
+    consultants: [
+      {
+        name: "Renato Landim",
+        role: "Consultor Imobiliário",
+        phone: "5561999886578",
+        formattedPhone: "(61) 9 9988-6578",
+        image: "/images/renato-landim.png",
+        defaultMessage: "Olá Renato! Vi o site da Solidus e tenho interesse em conhecer os imóveis. Pode me passar mais informações?"
+      },
+      {
+        name: "João Victor",
+        role: "Consultor Imobiliário",
+        phone: "5561982523822",
+        formattedPhone: "(61) 9 8252-3822",
+        image: "/images/joao-victor.png",
+        defaultMessage: "Olá João Victor! Vi o site da Solidus e tenho interesse em conhecer os imóveis. Pode me passar mais informações?"
+      }
+    ],
     main: {
       name: "Renato Landim",
       role: "",

@@ -8,6 +8,8 @@ import { condominiumData } from "@/lib/data";
 
 export default function ContactSection() {
   const { contact } = condominiumData;
+  const consultants = contact.consultants || [];
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -82,63 +84,58 @@ export default function ContactSection() {
 
           {/* Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-            {/* Consultor Info - Premium */}
+            {/* Consultores Info - Premium */}
             <div className="lg:col-span-2">
-              <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative">
-                {/* Background Image */}
-                <div 
-                  className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage: 'url(/images/corretor-bg.jpg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                ></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {consultants.map((consultant, index) => (
+                  <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+                    {/* Background Image */}
+                    <div 
+                      className="absolute inset-0 opacity-20"
+                      style={{
+                        backgroundImage: 'url(/images/corretor-bg.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                      }}
+                    ></div>
 
-                {/* Content Overlay */}
-                <div className="relative z-10">
-					{/* Photo */}
-					<div className="w-full flex items-center justify-center py-12">
-					  <img 
-					    src="/images/renato-landim.png" 
-					    alt={contact.main.name}
-					    className="w-56 h-56 rounded-full object-cover object-top border-4 border-black"
-					  />
-					</div>
+                    {/* Content Overlay */}
+                    <div className="relative z-10">
+                      {/* Photo */}
+                      <div className="w-full flex items-center justify-center py-8">
+                        <img 
+                          src={consultant.image} 
+                          alt={consultant.name}
+                          className="w-40 h-40 rounded-full object-cover object-top border-4 border-black"
+                        />
+                      </div>
 
-	                {/* Content */}
-	                <div className="px-8 pb-12 text-center">
-	                  {/* Header */}
-	                  <div className="mb-8">
-	                    <h3 className="text-3xl font-serif text-foreground mb-2">{contact.main.name}</h3>
-	                    <p className="text-sm text-foreground font-bold tracking-widest uppercase">CONSULTOR IMOBILIÁRIO</p>
-	                  </div>
+                      {/* Content */}
+                      <div className="px-6 pb-8 text-center">
+                        {/* Header */}
+                        <div className="mb-6">
+                          <h3 className="text-2xl font-serif text-foreground mb-2">{consultant.name}</h3>
+                          <p className="text-xs text-foreground font-bold tracking-widest uppercase">{consultant.role}</p>
+                        </div>
 
-                    <div className="w-full h-px bg-slate-300 mb-8"></div>
+                        <div className="w-full h-px bg-yellow-600 mb-6"></div>
 
-	                  {/* Contact Info - WhatsApp Button */}
-	                  <div className="flex justify-center mb-8">
-	                    <a
-	                      href={`https://wa.me/${contact.main.phone}?text=${encodeURIComponent(contact.main.defaultMessage)}`}
-	                      target="_blank"
-	                      rel="noopener noreferrer"
-	                      className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-md hover:shadow-lg w-full max-w-xs"
-	                    >
-	                      <MessageCircle size={20} />
-	                      <span>Abrir WhatsApp</span>
-	                    </a>
-	                  </div>
-
-                    <div className="w-full h-px bg-slate-300 mb-8"></div>
-
-	                  {/* Quote */}
-	                  <div className="px-4">
-	                    <p className="text-base text-slate-700 italic leading-relaxed font-medium">
-	                      "Meu compromisso é ajudá-lo a encontrar o investimento imobiliário perfeito para sua vida."
-	                    </p>
-	                  </div>
-	                </div>
-                </div>
+                        {/* Contact Info - WhatsApp Button */}
+                        <div className="flex justify-center mb-6">
+                          <a
+                            href={`https://wa.me/${consultant.phone}?text=${encodeURIComponent(consultant.defaultMessage)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 shadow-md hover:shadow-lg w-full text-sm"
+                          >
+                            <MessageCircle size={18} />
+                            <span>Abrir WhatsApp</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
