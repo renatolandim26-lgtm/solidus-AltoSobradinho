@@ -106,7 +106,7 @@ export default function ContactSection() {
                         <img 
                           src={consultant.image} 
                           alt={consultant.name}
-                          className="w-40 h-40 rounded-full object-cover object-top border-4 border-black"
+                          className="w-40 h-40 rounded-full object-cover object-center border-4 border-black"
                         />
                       </div>
 
