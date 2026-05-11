@@ -86,7 +86,7 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             {/* Consultores Info - Premium */}
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
                 {consultants.map((consultant, index) => (
                   <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative">
                     {/* Background Image */}
