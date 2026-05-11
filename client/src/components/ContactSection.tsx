@@ -82,156 +82,153 @@ export default function ContactSection() {
             </p>
           </div>
 
-          {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-            {/* Consultores Info - Premium */}
-            <div className="lg:col-span-2">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
-                {consultants.map((consultant, index) => (
-                  <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative">
-                    {/* Background Image */}
-                    <div 
-                      className="absolute inset-0 opacity-20"
-                      style={{
-                        backgroundImage: 'url(/images/corretor-bg.jpg)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    ></div>
+          {/* Consultores Info - Premium */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {consultants.map((consultant, index) => (
+                <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                      backgroundImage: 'url(/images/corretor-bg.jpg)',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  ></div>
 
-                    {/* Content Overlay */}
-                    <div className="relative z-10">
-                      {/* Photo */}
-                      <div className="w-full flex items-center justify-center py-8">
-                        <img 
-                          src={consultant.image} 
-                          alt={consultant.name}
-                          className="w-40 h-40 rounded-full object-cover object-center border-4 border-black"
-                        />
+                  {/* Content Overlay */}
+                  <div className="relative z-10">
+                    {/* Photo */}
+                    <div className="w-full flex items-center justify-center py-8">
+                      <img 
+                        src={consultant.image} 
+                        alt={consultant.name}
+                        className="w-40 h-40 rounded-full object-cover object-center border-4 border-black"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="px-6 pb-8 text-center">
+                      {/* Header */}
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-serif text-foreground mb-2">{consultant.name}</h3>
+                        <p className="text-xs text-foreground font-bold tracking-widest uppercase">{consultant.role}</p>
                       </div>
 
-                      {/* Content */}
-                      <div className="px-6 pb-8 text-center">
-                        {/* Header */}
-                        <div className="mb-6">
-                          <h3 className="text-2xl font-serif text-foreground mb-2">{consultant.name}</h3>
-                          <p className="text-xs text-foreground font-bold tracking-widest uppercase">{consultant.role}</p>
-                        </div>
+                      <div className="w-full h-px bg-yellow-600 mb-6"></div>
 
-                        <div className="w-full h-px bg-yellow-600 mb-6"></div>
-
-                        {/* Contact Info - WhatsApp Button */}
-                        <div className="flex justify-center mb-6">
-                          <a
-                            href={`https://wa.me/${consultant.phone}?text=${encodeURIComponent(consultant.defaultMessage)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 shadow-md hover:shadow-lg w-full text-sm"
-                          >
-                            <MessageCircle size={18} />
-                            <span>Abrir WhatsApp</span>
-                          </a>
-                        </div>
+                      {/* Contact Info - WhatsApp Button */}
+                      <div className="flex justify-center mb-6">
+                        <a
+                          href={`https://wa.me/${consultant.phone}?text=${encodeURIComponent(consultant.defaultMessage)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-bold transition-all duration-300 shadow-md hover:shadow-lg w-full text-sm"
+                        >
+                          <MessageCircle size={18} />
+                          <span>Abrir WhatsApp</span>
+                        </a>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Formulário - Premium */}
-            <div className="lg:col-span-3">
-              <div className="border border-slate-200 rounded-xl p-8 bg-white shadow-sm">
-                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Solicite atendimento personalizado</h3>
-                <p className="text-base text-foreground/60 mb-10">Preencha os dados abaixo e receba as melhores opções de investimento.</p>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Nome e Sobrenome */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Nome</label>
-                      <Input
-                        type="text"
-                        placeholder="Seu nome"
-                        value={formData.firstName}
-                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        required
-                        className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Sobrenome</label>
-                      <Input
-                        type="text"
-                        placeholder="Seu sobrenome"
-                        value={formData.lastName}
-                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        required
-                        className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Email e WhatsApp */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">E-mail</label>
-                      <Input
-                        type="email"
-                        placeholder="seu@email.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                        className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">WhatsApp</label>
-                      <Input
-                        type="tel"
-                        placeholder="(61) 9 9999-9999"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        required
-                        className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Região */}
+          {/* Formulário - Premium */}
+          <div className="max-w-2xl mx-auto">
+            <div className="border border-slate-200 rounded-xl p-8 bg-white shadow-sm">
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Solicite atendimento personalizado</h3>
+              <p className="text-base text-foreground/60 mb-10">Preencha os dados abaixo e receba as melhores opções de investimento.</p>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Nome e Sobrenome */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Região de Interesse</label>
-                    <Select value={formData.region} onValueChange={(value) => setFormData({ ...formData, region: value })}>
-                      <SelectTrigger className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors">
-                        <SelectValue placeholder="Selecione uma região" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {regions.map((region) => (
-                          <SelectItem key={region} value={region}>
-                            {region}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Nome</label>
+                    <Input
+                      type="text"
+                      placeholder="Seu nome"
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      required
+                      className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
+                    />
                   </div>
-
-                  {/* Botão */}
-                  <div className="pt-4">
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full h-14 sm:h-11 bg-primary hover:bg-primary/90 text-white text-base sm:text-sm font-medium rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
-                    >
-                      {isSubmitting ? "Enviando..." : "Quero receber opções"}
-                    </Button>
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Sobrenome</label>
+                    <Input
+                      type="text"
+                      placeholder="Seu sobrenome"
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      required
+                      className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
+                    />
                   </div>
+                </div>
 
-                  {/* Disclaimer */}
-                  <p className="text-xs text-foreground/50 text-center pt-2">
-                    Ao enviar este formulário, você concorda com nossa Política de Privacidade.
-                  </p>
-                </form>
-              </div>
+                {/* Email e WhatsApp */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">E-mail</label>
+                    <Input
+                      type="email"
+                      placeholder="seu@email.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">WhatsApp</label>
+                    <Input
+                      type="tel"
+                      placeholder="(61) 9 9999-9999"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
+                      className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Região */}
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Região de Interesse</label>
+                  <Select value={formData.region} onValueChange={(value) => setFormData({ ...formData, region: value })}>
+                    <SelectTrigger className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors">
+                      <SelectValue placeholder="Selecione uma região" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {regions.map((region) => (
+                        <SelectItem key={region} value={region}>
+                          {region}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Botão */}
+                <div className="pt-4">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-14 sm:h-11 bg-primary hover:bg-primary/90 text-white text-base sm:text-sm font-medium rounded-xl transition-all duration-300 shadow-sm hover:shadow-md"
+                  >
+                    {isSubmitting ? "Enviando..." : "Quero receber opções"}
+                  </Button>
+                </div>
+
+                {/* Disclaimer */}
+                <p className="text-xs text-foreground/50 text-center pt-2">
+                  Ao enviar este formulário, você concorda com nossa Política de Privacidade.
+                </p>
+              </form>
             </div>
           </div>
         </div>
