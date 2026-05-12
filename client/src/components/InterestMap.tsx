@@ -25,11 +25,11 @@ const pointsOfInterest = [
 
 // Cores para cada categoria
 const categoryColors: Record<string, string> = {
-  "EDUCAÇÃO": "#3b82f6",
+  EDUCAÇÃO: "#3b82f6",
   "COMPRAS E SERVIÇOS": "#8b5cf6",
-  "LAZER": "#ec4899",
-  "SAÚDE": "#10b981",
-  "RESTAURANTES": "#f59e0b"
+  LAZER: "#ec4899",
+  SAÚDE: "#10b981",
+  RESTAURANTES: "#f59e0b",
 };
 
 export default function InterestMap() {
@@ -37,7 +37,10 @@ export default function InterestMap() {
     <section id="localizacao" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Localização
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 md:block hidden">
@@ -48,28 +51,39 @@ export default function InterestMap() {
         {/* Lista de Pontos de Interesse */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Object.entries(
-            pointsOfInterest.reduce((acc, point) => {
-              if (!acc[point.category]) {
-                acc[point.category] = [];
-              }
-              acc[point.category].push(point);
-              return acc;
-            }, {} as Record<string, typeof pointsOfInterest>)
+            pointsOfInterest.reduce(
+              (acc, point) => {
+                if (!acc[point.category]) {
+                  acc[point.category] = [];
+                }
+                acc[point.category].push(point);
+                return acc;
+              },
+              {} as Record<string, typeof pointsOfInterest>,
+            ),
           ).map(([category, items]) => (
             <div key={category} className="card-corporate">
-              <h3 className="text-lg sm:text-xl font-bold mb-4 text-primary" style={{ fontFamily: "var(--font-display)" }}>
+              <h3
+                className="text-lg sm:text-xl font-bold mb-4 text-primary"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 {category}
               </h3>
               <ul className="space-y-2">
                 {items.map((item, itemIdx) => (
-                  <li key={itemIdx} className={`flex items-start gap-3 text-foreground ${itemIdx >= 3 ? 'md:flex hidden' : 'flex'}`}>
+                  <li
+                    key={itemIdx}
+                    className={`flex items-start gap-3 text-foreground ${itemIdx >= 3 ? "md:flex hidden" : "flex"}`}
+                  >
                     <span
                       className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white text-xs font-semibold flex-shrink-0"
                       style={{ backgroundColor: categoryColors[item.category] }}
                     >
                       {itemIdx + 1}
                     </span>
-                    <span className="text-xs sm:text-sm leading-relaxed">{item.name}</span>
+                    <span className="text-xs sm:text-sm leading-relaxed">
+                      {item.name}
+                    </span>
                   </li>
                 ))}
               </ul>

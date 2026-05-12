@@ -1,4 +1,9 @@
-import { ArrowDown, ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
+import {
+  ArrowDown,
+  ChevronLeft,
+  ChevronRight,
+  MessageCircle,
+} from "lucide-react";
 import { condominiumData } from "@/lib/data";
 import { useState, useEffect } from "react";
 
@@ -13,26 +18,26 @@ export default function Hero() {
       title: "Alto Sobradinho",
       subtitle: "",
       description: "Destino Vida e Lar",
-      image: "/images/hero-alto-sobradinho.jpg"
+      image: "/images/hero-alto-sobradinho.jpg",
     },
     {
       title: "Alto da Aurora",
       subtitle: "",
       description: "Terceiro condomínio do nosso complexo",
-      image: "/images/hero-alto-aurora.jpg"
+      image: "/images/hero-alto-aurora.jpg",
     },
     {
       title: "Alto da Alvorada",
       subtitle: "",
       description: "Segundo condomínio do complexo Alto Sobradinho",
-      image: "/images/hero-alto-alvorada.jpg"
+      image: "/images/hero-alto-alvorada.jpg",
     },
     {
       title: "Alto do Horizonte",
       subtitle: "",
       description: "Primeiro condomínio do nosso complexo",
-      image: "/images/hero-alto-horizonte.jpg"
-    }
+      image: "/images/hero-alto-horizonte.jpg",
+    },
   ];
 
   useEffect(() => {
@@ -61,7 +66,7 @@ export default function Hero() {
           backgroundImage: `url('${currentSlideData.image}')`,
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
-          willChange: "background-image"
+          willChange: "background-image",
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
@@ -70,21 +75,24 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white max-w-3xl">
         {currentSlideData.subtitle && (
-        <div className="mb-6 inline-block">
-          <span className="bg-primary/80 text-white px-4 py-2 rounded-full text-sm font-semibold">
-            {currentSlideData.subtitle}
-          </span>
-        </div>
-      )}
+          <div className="mb-6 inline-block">
+            <span className="bg-primary/80 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              {currentSlideData.subtitle}
+            </span>
+          </div>
+        )}
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6" style={{ fontFamily: "var(--font-display)" }}>
+        <h1
+          className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
           {currentSlideData.title}
         </h1>
 
         {currentSlideData.description && (
-        <p className="text-lg sm:text-xl md:text-2xl mb-10 sm:mb-12 text-gray-200 max-w-2xl mx-auto">
-          {currentSlideData.description}
-        </p>
+          <p className="text-lg sm:text-xl md:text-2xl mb-10 sm:mb-12 text-gray-200 max-w-2xl mx-auto">
+            {currentSlideData.description}
+          </p>
         )}
 
         {/* CTA Buttons */}
@@ -113,14 +121,16 @@ export default function Hero() {
           >
             <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
           </button>
-          
+
           <div className="flex gap-1.5 sm:gap-2">
             {slides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 className={`rounded-full transition-all ${
-                  idx === currentSlide ? "bg-white w-6 h-2 sm:w-8" : "bg-white/50 w-2 h-2"
+                  idx === currentSlide
+                    ? "bg-white w-6 h-2 sm:w-8"
+                    : "bg-white/50 w-2 h-2"
                 }`}
                 aria-label={`Ir para slide ${idx + 1}`}
               />

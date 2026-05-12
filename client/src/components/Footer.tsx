@@ -12,10 +12,13 @@ export default function Footer() {
           <div className="md:block hidden">
             <h4 className="font-bold mb-4">Solidus Empreendimentos</h4>
             <p className="text-sm text-sidebar-foreground/80 leading-relaxed">
-              Especialistas em imóveis com conforto, localização privilegiada e alto potencial de valorização.
+              Especialistas em imóveis com conforto, localização privilegiada e
+              alto potencial de valorização.
             </p>
             <p className="text-sm text-sidebar-foreground/80 leading-relaxed mt-4">
-              Conectamos você às melhores oportunidades imobiliárias em {main.location}, com atendimento personalizado e segurança em cada etapa.
+              Conectamos você às melhores oportunidades imobiliárias em{" "}
+              {main.location}, com atendimento personalizado e segurança em cada
+              etapa.
             </p>
           </div>
 
@@ -71,16 +74,28 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Links Rápidos</h4>
             <div className="space-y-2 text-sm">
-              <a href="#" className="block text-sidebar-foreground/80 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="block text-sidebar-foreground/80 hover:text-white transition-colors"
+              >
                 Início
               </a>
-              <a href="#" className="block text-sidebar-foreground/80 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="block text-sidebar-foreground/80 hover:text-white transition-colors"
+              >
                 Imóveis
               </a>
-              <a href="#" className="block text-sidebar-foreground/80 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="block text-sidebar-foreground/80 hover:text-white transition-colors"
+              >
                 Sobre
               </a>
-              <a href="#" className="block text-sidebar-foreground/80 hover:text-white transition-colors">
+              <a
+                href="#"
+                className="block text-sidebar-foreground/80 hover:text-white transition-colors"
+              >
                 Contato
               </a>
             </div>
@@ -93,9 +108,9 @@ export default function Footer() {
             <p className="text-sm text-sidebar-foreground/60">
               © 2026 Solidus Empreendimentos — Todos os direitos reservados.
             </p>
-            <img 
-              src={logoSolidusNew} 
-              alt="Solidus" 
+            <img
+              src={logoSolidusNew}
+              alt="Solidus"
               className="h-12 w-12 sm:h-14 sm:w-14 object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>

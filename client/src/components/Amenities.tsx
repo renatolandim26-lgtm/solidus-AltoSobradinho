@@ -1,19 +1,19 @@
 import React from "react";
-import { 
-  Waves, 
-  Dumbbell, 
-  Activity, 
-  Utensils, 
-  Smile, 
-  Bike, 
-  Flame, 
+import {
+  Waves,
+  Dumbbell,
+  Activity,
+  Utensils,
+  Smile,
+  Bike,
+  Flame,
   Shield,
   ShoppingCart,
   WashingMachine,
   Gamepad2,
   Dices,
   Dog,
-  Zap
+  Zap,
 } from "lucide-react";
 import { condominiumData } from "@/lib/data";
 
@@ -31,7 +31,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Gamepad2: <Gamepad2 size={32} />,
   Dices: <Dices size={32} />,
   Dog: <Dog size={32} />,
-  Zap: <Zap size={32} />
+  Zap: <Zap size={32} />,
 };
 
 export default function Amenities() {
@@ -39,11 +39,15 @@ export default function Amenities() {
     <section id="amenidades" className="py-32 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "var(--font-display)" }}>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Área de Lazer e Comodidade
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 md:block hidden">
-            Desfrute de uma vida com qualidade, segurança e conforto em um ambiente pensado para você e sua família
+            Desfrute de uma vida com qualidade, segurança e conforto em um
+            ambiente pensado para você e sua família
           </p>
         </div>
 
