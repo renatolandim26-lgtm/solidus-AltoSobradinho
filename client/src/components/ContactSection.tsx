@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { condominiumData } from "@/lib/data";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 export default function ContactSection() {
   const { contact } = condominiumData;
@@ -19,6 +20,7 @@ export default function ContactSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
   const regions = [
     "Samambaia",
@@ -224,15 +226,29 @@ export default function ContactSection() {
                   </Button>
                 </div>
 
-                {/* Disclaimer */}
-                <p className="text-xs text-foreground/50 text-center pt-2">
-                  Ao enviar este formulário, você concorda com nossa Política de Privacidade.
-                </p>
+                  {/* Disclaimer */}
+                  <p className="text-xs text-foreground/50 text-center pt-2">
+                    Ao enviar este formulário, você concorda com nossa{" "}
+                    <button
+                      type="button"
+                      onClick={() => setIsPrivacyModalOpen(true)}
+                      className="text-primary hover:underline transition-colors"
+                    >
+                      Política de Privacidade
+                    </button>
+                    .
+                  </p>
               </form>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+      />
     </section>
   );
 }
