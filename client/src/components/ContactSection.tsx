@@ -2,7 +2,13 @@ import { Phone, User, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { toast } from "sonner";
 import { condominiumData } from "@/lib/data";
 import PrivacyPolicyModal from "./PrivacyPolicyModal";
@@ -10,13 +16,13 @@ import PrivacyPolicyModal from "./PrivacyPolicyModal";
 export default function ContactSection() {
   const { contact } = condominiumData;
   const consultants = contact.consultants || [];
-  
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    region: ""
+    region: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,35 +37,45 @@ export default function ContactSection() {
     "Santa Maria",
     "Valparaíso de Goiás",
     "Ceilândia",
-    "Taguatinga"
+    "Taguatinga",
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.region) {
       toast.error("Por favor, selecione uma região de interesse.");
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("https://formspree.io/f/mojyejbd", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
       });
 
       if (response.ok) {
-        toast.success("Cadastro realizado com sucesso! Entraremos em contato em breve.");
-        setFormData({ firstName: "", lastName: "", email: "", phone: "", region: "" });
+        toast.success(
+          "Cadastro realizado com sucesso! Entraremos em contato em breve.",
+        );
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          region: "",
+        });
       } else {
         const result = await response.json();
-        toast.error(result.error || "Erro ao enviar o formulário. Tente novamente.");
+        toast.error(
+          result.error || "Erro ao enviar o formulário. Tente novamente.",
+        );
       }
     } catch (error) {
       console.error("Erro na requisição:", error);
@@ -70,17 +86,26 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contato" className="py-32 bg-gradient-to-b from-white to-slate-50">
+    <section
+      id="contato"
+      className="py-32 bg-gradient-to-b from-white to-slate-50"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-24">
-            <p className="text-base font-semibold text-primary/60 uppercase tracking-widest mb-4">Entre em Contato</p>
-            <h2 className="text-4xl sm:text-5xl md:text-5xl font-light mb-6 text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+            <p className="text-base font-semibold text-primary/60 uppercase tracking-widest mb-4">
+              Entre em Contato
+            </p>
+            <h2
+              className="text-4xl sm:text-5xl md:text-5xl font-light mb-6 text-foreground"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
               Fale com seu consultor
             </h2>
             <p className="text-lg sm:text-base text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-              Estamos à disposição para esclarecer dúvidas e apresentar as melhores oportunidades de investimento no Alto Sobradinho.
+              Estamos à disposição para esclarecer dúvidas e apresentar as
+              melhores oportunidades de investimento no Alto Sobradinho.
             </p>
           </div>
 
@@ -88,14 +113,17 @@ export default function ContactSection() {
           <div className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {consultants.map((consultant, index) => (
-                <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 relative"
+                >
                   {/* Background Image */}
-                  <div 
+                  <div
                     className="absolute inset-0 opacity-20"
                     style={{
-                      backgroundImage: 'url(/images/corretor-bg.jpg)',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
+                      backgroundImage: "url(/images/corretor-bg.jpg)",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
                     }}
                   ></div>
 
@@ -103,8 +131,8 @@ export default function ContactSection() {
                   <div className="relative z-10">
                     {/* Photo */}
                     <div className="w-full flex items-center justify-center py-8">
-                      <img 
-                        src={consultant.image} 
+                      <img
+                        src={consultant.image}
                         alt={consultant.name}
                         className="w-40 h-40 rounded-full object-cover object-center border-4 border-black"
                       />
@@ -114,8 +142,12 @@ export default function ContactSection() {
                     <div className="px-6 pb-8 text-center">
                       {/* Header */}
                       <div className="mb-6">
-                        <h3 className="text-2xl font-serif text-foreground mb-2">{consultant.name}</h3>
-                        <p className="text-xs text-foreground font-bold tracking-widest uppercase">{consultant.role}</p>
+                        <h3 className="text-2xl font-serif text-foreground mb-2">
+                          {consultant.name}
+                        </h3>
+                        <p className="text-xs text-foreground font-bold tracking-widest uppercase">
+                          {consultant.role}
+                        </p>
                       </div>
 
                       <div className="w-full h-px bg-yellow-600 mb-6"></div>
@@ -142,30 +174,43 @@ export default function ContactSection() {
           {/* Formulário - Premium */}
           <div className="max-w-2xl mx-auto">
             <div className="border border-slate-200 rounded-xl p-8 bg-white shadow-sm">
-              <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Solicite atendimento personalizado</h3>
-              <p className="text-base text-foreground/60 mb-10">Preencha os dados abaixo e receba as melhores opções de investimento.</p>
-              
+              <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                Solicite atendimento personalizado
+              </h3>
+              <p className="text-base text-foreground/60 mb-10">
+                Preencha os dados abaixo e receba as melhores opções de
+                investimento.
+              </p>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Nome e Sobrenome */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Nome</label>
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">
+                      Nome
+                    </label>
                     <Input
                       type="text"
                       placeholder="Seu nome"
                       value={formData.firstName}
-                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, firstName: e.target.value })
+                      }
                       required
                       className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Sobrenome</label>
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">
+                      Sobrenome
+                    </label>
                     <Input
                       type="text"
                       placeholder="Seu sobrenome"
                       value={formData.lastName}
-                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, lastName: e.target.value })
+                      }
                       required
                       className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
                     />
@@ -175,23 +220,31 @@ export default function ContactSection() {
                 {/* Email e WhatsApp */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">E-mail</label>
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">
+                      E-mail
+                    </label>
                     <Input
                       type="email"
                       placeholder="seu@email.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                       className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">WhatsApp</label>
+                    <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">
+                      WhatsApp
+                    </label>
                     <Input
                       type="tel"
                       placeholder="(61) 9 9999-9999"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
                       required
                       className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors"
                     />
@@ -200,8 +253,15 @@ export default function ContactSection() {
 
                 {/* Região */}
                 <div className="space-y-2">
-                  <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">Região de Interesse</label>
-                  <Select value={formData.region} onValueChange={(value) => setFormData({ ...formData, region: value })}>
+                  <label className="text-xs font-medium text-foreground/70 uppercase tracking-wider">
+                    Região de Interesse
+                  </label>
+                  <Select
+                    value={formData.region}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, region: value })
+                    }
+                  >
                     <SelectTrigger className="h-12 border-b border-slate-300 bg-transparent focus:border-primary rounded-none px-0 py-2 text-base placeholder:text-foreground/30 focus:outline-none focus:ring-0 transition-colors">
                       <SelectValue placeholder="Selecione uma região" />
                     </SelectTrigger>
@@ -226,18 +286,18 @@ export default function ContactSection() {
                   </Button>
                 </div>
 
-                  {/* Disclaimer */}
-                  <p className="text-xs text-foreground/50 text-center pt-2">
-                    Ao enviar este formulário, você concorda com nossa{" "}
-                    <button
-                      type="button"
-                      onClick={() => setIsPrivacyModalOpen(true)}
-                      className="text-primary hover:underline transition-colors"
-                    >
-                      Política de Privacidade
-                    </button>
-                    .
-                  </p>
+                {/* Disclaimer */}
+                <p className="text-xs text-foreground/50 text-center pt-2">
+                  Ao enviar este formulário, você concorda com nossa{" "}
+                  <button
+                    type="button"
+                    onClick={() => setIsPrivacyModalOpen(true)}
+                    className="text-primary hover:underline transition-colors"
+                  >
+                    Política de Privacidade
+                  </button>
+                  .
+                </p>
               </form>
             </div>
           </div>

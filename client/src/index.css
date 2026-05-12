@@ -44,73 +44,73 @@
 
 :root {
   /* Luxo Sofisticado - Inspirado na Logo Solidus */
-  --primary: #A68B5B; /* Bronze sofisticado */
-  --primary-foreground: #FFFFFF;
-  --sidebar-primary: #8B7355; /* Bronze envelhecido */
-  --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: #A68B5B;
-  --chart-2: #D4C4A8;
-  --chart-3: #B8860B;
-  --chart-4: #D4AF37;
-  --chart-5: #E8D5C4;
+  --primary: #a68b5b; /* Bronze sofisticado */
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #8b7355; /* Bronze envelhecido */
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: #a68b5b;
+  --chart-2: #d4c4a8;
+  --chart-3: #b8860b;
+  --chart-4: #d4af37;
+  --chart-5: #e8d5c4;
   --radius: 0.5rem;
-  --background: #FDFCF9; /* Mármore suave */
-  --foreground: #2D2926; /* Marrom escuro suave */
-  --card: #F9F7F3;
-  --card-foreground: #2D2926;
-  --popover: #FDFCF9;
-  --popover-foreground: #2D2926;
-  --secondary: #D4C4A8; /* Dourado claro inspirado no mármore */
-  --secondary-foreground: #2D2926;
-  --muted: #E8DFD3;
-  --muted-foreground: #6B6460;
-  --accent: #8B7355;
-  --accent-foreground: #FFFFFF;
-  --destructive: #DC2626;
-  --destructive-foreground: #FFFFFF;
-  --border: #E8DFD3;
-  --input: #FAFAF8;
-  --ring: #A68B5B;
-  --sidebar: #8B7355;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-accent: #A68B5B;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #6B5344;
-  --sidebar-ring: #A68B5B;
+  --background: #fdfcf9; /* Mármore suave */
+  --foreground: #2d2926; /* Marrom escuro suave */
+  --card: #f9f7f3;
+  --card-foreground: #2d2926;
+  --popover: #fdfcf9;
+  --popover-foreground: #2d2926;
+  --secondary: #d4c4a8; /* Dourado claro inspirado no mármore */
+  --secondary-foreground: #2d2926;
+  --muted: #e8dfd3;
+  --muted-foreground: #6b6460;
+  --accent: #8b7355;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e8dfd3;
+  --input: #fafaf8;
+  --ring: #a68b5b;
+  --sidebar: #8b7355;
+  --sidebar-foreground: #ffffff;
+  --sidebar-accent: #a68b5b;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #6b5344;
+  --sidebar-ring: #a68b5b;
   /* Tipografia */
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
 }
 
 .dark {
   /* Tema escuro não será usado neste projeto, mas mantemos consistência */
-  --primary: #A68B5B;
-  --primary-foreground: #FFFFFF;
-  --sidebar-primary: #8B7355;
-  --sidebar-primary-foreground: #FFFFFF;
-  --background: #1A1A1A;
-  --foreground: #E0E0E0;
-  --card: #2A2A2A;
-  --card-foreground: #E0E0E0;
-  --popover: #2A2A2A;
-  --popover-foreground: #E0E0E0;
-  --secondary: #A68B5B;
-  --secondary-foreground: #FFFFFF;
+  --primary: #a68b5b;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #8b7355;
+  --sidebar-primary-foreground: #ffffff;
+  --background: #1a1a1a;
+  --foreground: #e0e0e0;
+  --card: #2a2a2a;
+  --card-foreground: #e0e0e0;
+  --popover: #2a2a2a;
+  --popover-foreground: #e0e0e0;
+  --secondary: #a68b5b;
+  --secondary-foreground: #ffffff;
   --muted: #404040;
   --muted-foreground: #999999;
-  --accent: #A68B5B;
-  --accent-foreground: #FFFFFF;
-  --destructive: #FF6B6B;
-  --destructive-foreground: #FFFFFF;
+  --accent: #a68b5b;
+  --accent-foreground: #ffffff;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #ffffff;
   --border: #404040;
-  --input: #2A2A2A;
-  --ring: #A68B5B;
-  --sidebar: #1A1A1A;
-  --sidebar-foreground: #E0E0E0;
-  --sidebar-accent: #A68B5B;
-  --sidebar-accent-foreground: #FFFFFF;
+  --input: #2a2a2a;
+  --ring: #a68b5b;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #e0e0e0;
+  --sidebar-accent: #a68b5b;
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #333333;
-  --sidebar-ring: #A68B5B;
+  --sidebar-ring: #a68b5b;
 }
 
 @layer base {
@@ -121,7 +121,12 @@
     @apply bg-background text-foreground;
     font-family: var(--font-body);
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     font-weight: 700;
   }
@@ -176,13 +181,12 @@
 
   /* Sombras sofisticadas */
 
-
   /* Transicoes suaves */
 
   /* Linhas divisorias */
   .divider-line {
     height: 1px;
-    background: linear-gradient(to right, transparent, #E0E0E0, transparent);
+    background: linear-gradient(to right, transparent, #e0e0e0, transparent);
   }
 
   /* Linhas diagonais */
@@ -192,7 +196,7 @@
   }
 
   .diagonal-divider::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -1px;
     left: 0;

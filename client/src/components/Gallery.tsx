@@ -7,7 +7,10 @@ export default function Gallery() {
     <section id="galeria" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary" style={{ fontFamily: "var(--font-display)" }}>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4 text-primary"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Galeria do Empreendimento
           </h2>
           <div className="w-24 h-1 bg-primary/20 mx-auto mb-6 rounded-full"></div>
