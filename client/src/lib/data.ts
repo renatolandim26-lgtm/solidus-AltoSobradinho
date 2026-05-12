@@ -211,7 +211,7 @@ export const condominiumData = {
         defaultMessage: "Olá João Victor! Vi o site da Solidus e tenho interesse em conhecer os imóveis. Pode me passar mais informações?"
       },
       {
-        name: "Glória Stéfano",
+        name: "Glória Stéfane",
         role: "Consultora Imobiliária",
         phone: "5561984670570",
         formattedPhone: "(61) 9 8467-0570",
