@@ -217,6 +217,14 @@ export const condominiumData = {
         formattedPhone: "(61) 9 8467-0570",
         image: "/images/gloria-stefano.png",
         defaultMessage: "Olá Glória! Vi o site da Solidus e tenho interesse em conhecer os imóveis. Pode me passar mais informações?"
+      },
+      {
+        name: "Davyd Pereira",
+        role: "Consultor Imobiliário",
+        phone: "5561993707482",
+        formattedPhone: "(61) 9 9370-7482",
+        image: "/images/davyd-pereira.png",
+        defaultMessage: "Olá Davyd! Vi o site da Solidus e tenho interesse em conhecer os imóveis. Pode me passar mais informações?"
       }
     ],
     main: {
